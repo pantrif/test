@@ -1,0 +1,29 @@
+language: php
+
+php:
+  - '7.0'
+
+services:
+  - mysql
+
+
+before_script:
+  # - export TZ=Europe/Athens
+  - sleep 10
+  - phpenv config-rm xdebug.ini
+  - pecl channel-update pecl.php.net
+  - pecl install -f mongodb;
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install language-pack-el
+
+addons:
+  apt:
+    sources:
+      - mongodb-upstart
+      - sourceline: 'deb [arch=amd64] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse'
+        key_url: 'https://www.mongodb.org/static/pgp/server-3.4.asc'
+    packages:
+      - mongodb-org-server
+      - mongodb-org-shell
