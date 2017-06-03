@@ -17,6 +17,10 @@ before_script:
 before_install:
   - sudo apt-get update
   - sudo apt-get install language-pack-el
+  
+
+script:
+   - ./tests/run-tests.php
 
 addons:
   apt:
