@@ -2,7 +2,7 @@
 
 require dirname(__DIR__) . '/src/Bank.php';
 
-class BankTest extends PHPUnit_Framework_TestCase
+class BankTest extends \PHPUnit_Framework_TestCase
 {
 	public function testSetBankConstruct() 
 	{
