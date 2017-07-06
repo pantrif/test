@@ -3,6 +3,7 @@ language: php
 php:
     - 7.0
     - 7.1
+    - 5.3
 
 install:
   - composer install
@@ -22,4 +23,4 @@ before_install:
 #   - kafka/bin/kafka-topics.sh --create --partitions 64 --replication-factor 1 --topic test.64 --zookeeper localhost:2181
 
 script:
-  - phpunit -c phpunit.xml --coverage-text ./test
+  - phpunit -c phpunit.xml --coverage-text
