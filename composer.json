@@ -1,11 +1,10 @@
 {
-    "name": "zpq/demo1",
+    "name": "pantrif/demo1",
     "description": "test",
     "license": "MIT",
     "authors": [
         {
-            "name": "zpq",
-            "email": "307154456@qq.com"
+            "name": "leonidas maroulis"
         }
     ],
     "minimum-stability": "dev",

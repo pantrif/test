@@ -1,7 +1,8 @@
 <?php
 
+//require dirname(__DIR__) . '/../src/Bank.php';
 
-class BankTest extends \PHPUnit_Framework_TestCase
+class Bank1Test extends \PHPUnit_Framework_TestCase
 {
 	public function testSetBankConstruct() 
 	{

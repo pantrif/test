@@ -1,13 +1,14 @@
 <?php
+//require dirname(__DIR__) . '/../src/Bank.php';
 
-
-class BankTest extends \PHPUnit_Framework_TestCase
+class Bank2Test extends \PHPUnit_Framework_TestCase
 {
 	public function testSetBankConstruct() 
 	{
 		$b = new Bank('jack', 1000);
 		$this->assertAttributeEquals('jack', 'account', $b);
 		$this->assertAttributeEquals(1000, 'balance', $b);
+		sleep(2);
 	}
 	
 	/**
@@ -23,6 +24,7 @@ class BankTest extends \PHPUnit_Framework_TestCase
 	{
 		$b = new Bank('jack', 1000);
 		$this->assertEquals(2000, $b->deposit(1000));
+		sleep(2);
 	}
 
 	/**
@@ -31,6 +33,7 @@ class BankTest extends \PHPUnit_Framework_TestCase
 	public function testInvalidArgumentWithdraw() {
 		$b = new Bank('jack');
 		$b->withDraw("show me a lot of money!");
+		sleep(2);
 	}
 
 	/**
