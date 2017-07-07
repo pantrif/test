@@ -4,6 +4,12 @@
 		<testsuite name="bank">
 			<directory phpVersion="5.3.0" phpVersionOperator=">=" suffix="Test.php">test</directory>
 		</testsuite>
+		<testsuite name="one">
+			<directory suffix="Test.php">test/One</directory>
+		</testsuite>
+		<testsuite name="two">
+			<directory suffix="Test.php">test/Two</directory>
+		</testsuite>
 	</testsuites>
 	<filter>
 		<whitelist>
