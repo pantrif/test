@@ -10,7 +10,6 @@
     "minimum-stability": "dev",
     "require": {},
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "brianium/paratest": "dev-master"
+        "phpunit/phpunit": "*"
     }
 }
