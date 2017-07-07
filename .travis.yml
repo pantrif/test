@@ -1,15 +1,15 @@
 language: php
 
 env:
-  - PHP_VERSION=postgres
+  - PHP_VERSION=7
 
 matrix:
   fast_finish: true
   include:
-    - php: $PHP_VERSION
+    - php: 7
       env:
         - TEST_SUITE=one
-    - php: $PHP_VERSION
+    - php: 7
       env:
         - TEST_SUITE=two
 
