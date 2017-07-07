@@ -1,17 +1,18 @@
 language: php
 
-env:
-  - PHP_VERSION='7.1'
 
-matrix:
-  fast_finish: true
-  include:
-    - php: $PHP_VERSION
-      env:
-        - TEST_SUITE=one
-    - php: $PHP_VERSION
-      env:
-        - TEST_SUITE=two
+env:
+  global:
+    - PHP_VERSION='7.1'
+  matrix:
+    fast_finish: true
+    include:
+      - php: $PHP_VERSION
+        env:
+          - TEST_SUITE=one
+      - php: $PHP_VERSION
+        env:
+          - TEST_SUITE=two
 
 install:
   - composer install
