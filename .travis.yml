@@ -1,15 +1,13 @@
 language: php
+dist: trusty
+sudo: required
+
+php:
+  - '7.1'
 
 
-matrix:
-  fast_finish: true
-  include:
-    - php: '7'
-      env:
-        - TEST_SUITE=one
-    - php: '7'
-      env:
-        - TEST_SUITE=two
+services:
+  - docker
 
 install:
   - composer install
@@ -27,6 +25,13 @@ before_install:
 #   - kafka/bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic test_topic --zookeeper localhost:2181
 #   - kafka/bin/kafka-topics.sh --create --partitions 4 --replication-factor 1 --topic test.4 --zookeeper localhost:2181
 #   - kafka/bin/kafka-topics.sh --create --partitions 64 --replication-factor 1 --topic test.64 --zookeeper localhost:2181
+#     - sudo service mysql stop || sudo service mysql-5.6 stop || sudo stop mysql-5.6 || sudo stop mysql || echo "failed to stop mysql"
+  - sudo service mysql stop || sudo service mysql-5.6 stop || sudo stop mysql-5.6 || sudo stop mysql || echo "failed to stop mysql"
+  - sudo docker run -d -p 3306:3306 mysql:5.7 # or whatever version mysql:5.6 mysql:5.5 mysql:5.8 or your custom mysql image
 
 script:
-  - phpunit -c phpunit.xml --coverage-text --testsuite $TEST_SUITE
+  - mysql --version
+  - phpunit -c phpunit.xml --coverage-text
+
+notifications:
+  email: false
